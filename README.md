@@ -1,2 +1,2 @@
 # Econometrics-EPortfolio
-A sample of the works I submitted when performing data analysis using Stata, R and Eviews.  
+A sample of data analysis excercises I ghave done using Stata, R and Eviews.  
