@@ -13,14 +13,14 @@ library("sem")
 library("strucchange")
 library("sandwich")
 
-#1.Cargar base en cuesti髇
+#1.Cargar base en cuesti贸n
 
-clase2mu<-read.csv("C:/Users/Eventos/Documents/Diplomado Econometr韆/Entregas/Tarea 5/FPN1.csv", header=T)
+clase2mu<-read.csv("C:/Users/Eventos/Documents/Diplomado Econometr铆a/Entregas/Tarea 5/FPN1.csv", header=T)
 attach(clase2mu)
 
-#An醠isis de un modelo que explica el nivel de producto actual a partir de una funci髇 Cobb-Douglas (capital y trabajo) de tipo lineal corregida y con rezago (a駉 anterior).
+#An谩lisis de un modelo que explica el nivel de producto actual a partir de una funci贸n Cobb-Douglas (capital y trabajo) de tipo lineal corregida y con rezago (a帽o anterior).
 
-#2. Creaci髇 de las variables corregidas del modelo, 
+#2. Creaci贸n de las variables corregidas del modelo, 
 
 lPIB<-log(PIB); lPIB
 lStK<-log(StK); lStK
@@ -32,7 +32,7 @@ laglStK<-lag(lStK); laglStK
 laglL<-lag(lL); laglL
 laglPIB<-lag(lPIB); laglPIB
 
-#4. Modelo en cuesti髇:
+#4. Modelo en cuesti贸n:
 
 modfin<-lm(lPIB~laglStK+laglL)
 modfinalt1<-lm(lPIB~laglStK)
@@ -41,14 +41,14 @@ summary(modfin)
 plot(modfin)
 valajust<-fitted(modfin)
 
-#5. Visualizaci髇 de residuos
+#5. Visualizaci贸n de residuos
 
 resid<-residuals(modfin)
 boxplot(resid)
 
 #6. Pruebas de Normalidad de los resiudos.
 
-#a) Gr醘ica Normal.
+#a) Gr谩fica Normal.
 
 plot(modfin)
 
@@ -70,9 +70,9 @@ jb.norm.test(resid, nrepl=2000)
 
 shapiro.test(resid)
 
-#7. Pruebas de Autocorrelaci髇.
+#7. Pruebas de Autocorrelaci贸n.
 
-#a) Gr醘ica de dispersi髇 contra residuales.
+#a) Gr谩fica de dispersi贸n contra residuales.
 
 plot(modfin)
 
@@ -99,7 +99,7 @@ bgtest(modfin)
 
 #8. Pruebas de Homocedasticidad.
 
-#a) Gr醘ica de dispersi髇 contra residuales.
+#a) Gr谩fica de dispersi贸n contra residuales.
 
 plot(modfin)
 
@@ -129,11 +129,11 @@ summary(mod2aux)
 
 reglatheil=0.03722-(0.03722-0.03622)-(0.03722-0.0808)-(0.03722-0.0817)
 
-#d) Factor de Inflaci髇 de la Varianza.
+#d) Factor de Inflaci贸n de la Varianza.
 
 vif(modfin) 
 
-#10. Estimaci髇 correcta del modelo.
+#10. Estimaci贸n correcta del modelo.
 
 #a) Prueba RESET de Ramsay.
 
@@ -155,7 +155,7 @@ AIC(modfinalt2)
 
 #11. Cambios estructurales.
 
-#a) Gr醘ico de Distribuci髇 de Observaicones
+#a) Gr谩fico de Distribuci贸n de Observaicones
 
 plot.ts(modfin)
 
